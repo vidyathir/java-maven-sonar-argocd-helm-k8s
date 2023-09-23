@@ -1,13 +1,6 @@
-# You can change this base image to anything else
-# But make sure to use the correct version of Java
-FROM adoptopenjdk/openjdk11:alpine-jre
+FROM openjdk:8-jre-alpine
 
-# Simply the artifact path
-ARG artifact=spring-boot-app/target/spring-boot-web.jar
+COPY ./target/spring-boot-web.jar /usr/app/
+WORKDIR /usr/app
 
-WORKDIR /opt/app
-
-COPY ${artifact} app.jar
-
-# This should not be changed
-ENTRYPOINT ["java","-jar","app.jar"]
+CMD java -jar spring-boot-web.jar
