@@ -33,4 +33,4 @@ phases:
 artifacts:
   files:
     - imagedefinitions.json
-    - target/spring-boot-app.jar
+    - target/spring-boot-web.jar
